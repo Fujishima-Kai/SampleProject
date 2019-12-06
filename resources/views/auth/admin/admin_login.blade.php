@@ -1,31 +1,23 @@
-@extends('layouts.app')
+@@extends('layouts.app')
 
 @section('content')
-<form id="sign_in_adm" method="POST" action="{{ route('admin.login.submit') }}">
-   {{ csrf_field() }}
-   <div class="input-group">
-      <span class="input-group-addon"> <i class="zmdi zmdi-account"></i> </span>
-      <div class="form-line">
-         <input type="email" class="form-control" name="email" placeholder="Email Address" value="{{ old('email') }}" required autofocus>
-      </div>
-      @if ($errors->has('email'))
-      <span class="text-danger"><strong>{{ $errors->first('email') }}</strong></span>
-      @endif
-   </div>
-   <div class="input-group">
-      <span class="input-group-addon"> <i class="zmdi zmdi-lock"></i> </span>
-      <div class="form-line">
-         <input type="password" class="form-control" name="password" placeholder="Password" required>
-      </div>
-   </div>
-   <div>
-      <div class="">
-         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }} id="rememberme" class="filled-in chk-col-pink">
-         <label for="rememberme">Remember Me</label>
-      </div>
-      <div class="text-center">
-         <button type="submit" class="btn btn-raised waves-effect g-bg-cyan">SIGN IN</button>
-      </div>
-   </div>
-</form>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">Dashboard</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
