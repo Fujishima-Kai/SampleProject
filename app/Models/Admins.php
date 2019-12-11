@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Adomins extends Authenticatable
+class Admins extends Authenticatable
 {
     protected $gurard = 'admin';
 }
