@@ -15,9 +15,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+Route::get('/corporation', function () {
+    return view('corporation');
+});
+Route::get('/corporation', 'CorporationController@index');
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+
 
 Auth::routes();
 
