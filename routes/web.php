@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get('/corporation', function () {
     return view('corporation');
 });
-Route::get('/corporation', 'CorporationController@index');
+Route::get('corporation.show', 'CorporationController@show');
 
 
 

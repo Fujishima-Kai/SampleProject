@@ -1,5 +1,12 @@
+<!doctype html>
 <html>
-    <body>
-        <h1>取引先一覧表示</h1>
-    </body>
+<head>
+    <title>取引先一覧</title>
+</head>
+<body>
+<h1>CorporationList</h1>
+@foreach($corporation as $c)
+    <p>{{$c->title}} : {{$c->body}}</p>
+@endforeach
+</body>
 </html>
