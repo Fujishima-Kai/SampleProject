@@ -1,3 +1,5 @@
+<html>
+<body>
 <label for="title">新規取引先作成</label><br>
 
   <body>
@@ -12,15 +14,12 @@
   <div class="form-submit">
              <button type="submit">登録する</button>
            </div>
-</body>
-</html>
 
 
 
-@section('corporation.create')
+@section('corporation.store')
 
     <form action='http://localhost:8080/corporation' method='post'>
-        {{ csrf_field() }}
             ID：<input type='text' name='id'><br>
             取引先名：<input type='text' name='name'><br>
             住所：<input type='text' name='address'><br>
@@ -29,3 +28,5 @@
             <input type='submit' value='新規登録'>
     </form>
 @endsection
+</body>
+</html>

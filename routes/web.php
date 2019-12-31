@@ -21,8 +21,8 @@ Route::get('/', function () {
 
 Route::get('/corporation', 'CorporationController@index');
 
-Route::get('/corporation/create', 'CorporationController@create');
-Route::post('/corporation/create', 'CorporationController@store');
+Route::get('/corporation/create', 'CorporationController@create')->name('corporation_create');
+Route::post('/corporation/create', 'CorporationController@store')->name('corporation_store');
 
 
 

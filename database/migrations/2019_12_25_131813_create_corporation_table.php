@@ -16,12 +16,9 @@ class CreateCorporationTable extends Migration
         Schema::create('corporation', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('name_kana');
-            $table->float('markup_ratios');
-            $table->string('prefecture');
-            $table->string('city');
-            $table->string('house_number');
-            $table->timestamps();
+            $table->string('address');
+            $table->string('phone_number');
+            $table->string('email');
         });
     }
 
