@@ -8,9 +8,25 @@ use Illuminate\Http\Request;
 
 class CorporationController extends Controller
 {
-    function show()
+    public function index()
     {
-        $corporation = Corporation::all();
-        return view('corporation.show', ['corporation' => $corporation]);
+        $corporation = corporation::all();
+        return view('corporations.list', ['corporation' => $corporation]);
+    }
+
+
+    public function create()
+    {
+        return view('corporations.create');
+    }
+
+    public function store(Request, $request)
+    {
+        $post = new Corporation;
+        $form = $request->all();
+        unset($form['_token']);
+        $new_corporation->fill($form)->save();
+        return redirect()->route('corporation.list');
     }
 }
+

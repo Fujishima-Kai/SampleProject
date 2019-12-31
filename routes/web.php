@@ -18,10 +18,13 @@ Route::get('/', function () {
 
 
 
-Route::get('/corporation', function () {
-    return view('corporation');
-});
-Route::get('corporation.show', 'CorporationController@show');
+
+Route::get('/corporation', 'CorporationController@index');
+
+Route::get('/corporation/create', 'CorporationController@create');
+Route::post('/corporation/create', 'CorporationController@store');
+
+
 
 
 
