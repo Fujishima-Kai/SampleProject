@@ -5,7 +5,6 @@
     <div class="row">
     </div>
     <table class="table table-striped">
-    <?php
     @foreach($corporations as $c)
         <tr>
             <td>{{$c->id}}</td>
@@ -15,6 +14,6 @@
             <td>{{$c->email}}</td>
         </tr>
     @endforeach
-    ?>
+    </table>
     </body>
 </html>

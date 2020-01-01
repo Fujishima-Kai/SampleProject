@@ -11,7 +11,7 @@ class CorporationController extends Controller
     public function index()
     {
         $corporations = Corporation::all();
-        return view('corporations.list', compact($corporations));
+        return view('corporations.list', ['corporations' => $corporations]);
     }
 
 
