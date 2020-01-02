@@ -19,7 +19,7 @@ Route::get('/', function () {
 
 
 
-Route::get('/corporation', 'CorporationController@index')->name('corporation.list');
+Route::get('/corporation', 'CorporationController@index')->name('corporations.list');
 
 Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create');
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
