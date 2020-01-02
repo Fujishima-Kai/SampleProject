@@ -22,11 +22,10 @@ class CorporationController extends Controller
 
     public function store(Request $request)
     {
-        $post = new Corporation;
-        $form = $request->all();
-        unset($form['_token']);
-        $new_corporation->fill($form)->save();
-        return redirect()->route('corporations.list');
+        $corporations = new Corporation;
+        $corporations ->fill($request->all());
+        $corporations->save();
+        return redirect('corporations.list', ['corporations' => $corporations]);
     }
 }
 

@@ -1,32 +1,22 @@
+
 <html>
 <body>
 <label for="title">新規取引先作成</label><br>
 
+ <form action='127.0.0.1:8000/corporation' method='post'>
+
   <body>
   <p>入力項目</p>
   <ul>
-<li>  ID　　　　<input class="form-control" name="title" type="text" id="title"></li><br>
-<li>  取引先名　<input class="form-control" name="title" type="text" id="title"></li><br>
-<li>  住所　　　<input class="form-control" name="title" type="text" id="title"></li><br>
-<li>  電話番号　<input class="form-control" name="title" type="text" id="title"></li><br>
-<li>  E-Mail　  <input class="form-control" name="title" type="text" id="title"></li><br>
+<li>  ID　　　　<input class="form-control" name="id" type="text" id="title"></li><br>
+<li>  取引先名　<input class="form-control" name="name" type="text" id="title"></li><br>
+<li>  住所　　　<input class="form-control" name="address" type="text" id="title"></li><br>
+<li>  電話番号　<input class="form-control" name="phone_number" type="text" id="title"></li><br>
+<li>  E-Mail　  <input class="form-control" name="email" type="text" id="title"></li><br>
   </ul>
   <div class="form-submit">
              <button type="submit">登録する</button>
            </div>
-
-
-
-@section('corporation.store')
-
-    <form action='http://localhost:8080/corporation' method='post'>
-            ID：<input type='text' name='id'><br>
-            取引先名：<input type='text' name='name'><br>
-            住所：<input type='text' name='address'><br>
-            電話番号：<input type='text' name='phone_number'><br>
-            E-Mail：<input type='text' name='content'><br>
-            <input type='submit' value='新規登録'>
     </form>
-@endsection
 </body>
 </html>
