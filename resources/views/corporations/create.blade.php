@@ -3,8 +3,8 @@
 <body>
 <label for="title">新規取引先作成</label><br>
 
- <form action='127.0.0.1:8000/corporation' method='post'>
-
+ <form action="{{action('CorporationController@store')}}" method='post'>
+ @csrf
   <body>
   <p>入力項目</p>
   <ul>

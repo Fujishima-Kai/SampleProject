@@ -13,7 +13,7 @@ class CreateCorporationTable extends Migration
      */
     public function up()
     {
-        Schema::create('corporation', function (Blueprint $table) {
+        Schema::create('corporations', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('address');
@@ -30,6 +30,6 @@ class CreateCorporationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('corporation');
+        Schema::dropIfExists('corporations');
     }
 }

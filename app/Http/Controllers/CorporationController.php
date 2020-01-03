@@ -23,9 +23,10 @@ class CorporationController extends Controller
     public function store(Request $request)
     {
         $corporations = new Corporation;
-        $corporations ->fill($request->all());
+        $corporations->fill($request->all());
+        $corporations->timestamps = false;
         $corporations->save();
-        return redirect('corporations.list', ['corporations' => $corporations]);
+        return redirect('/corporation');
     }
 }
 
