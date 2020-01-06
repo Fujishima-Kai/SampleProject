@@ -24,7 +24,7 @@ Route::get('/corporation', 'CorporationController@index')->name('corporations.li
 Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create');
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
 
-
+Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit');
 
 
 

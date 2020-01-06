@@ -28,5 +28,16 @@ class CorporationController extends Controller
         $corporations->save();
         return redirect('/corporation');
     }
+
+
+    public function edit($id){
+        $post = Post::find($id);
+        return View::make('posts.edit')
+            ->with('post', $post);
+    }
 }
+
+
+
+
 

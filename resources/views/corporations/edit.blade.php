@@ -1,6 +1,5 @@
-
 <html>
-<label for="title">新規取引先作成</label><br>
+<label for="title">取引先情報更新・変更</label><br>
 
  <form action="{{action('CorporationController@store')}}" method='post'>
  @csrf
@@ -13,7 +12,7 @@
 <li>  E-Mail　  <input class="form-control" name="email" type="text" id="title"></li><br>
   </ul>
   <div class="form-submit">
-             <button type="submit">登録する</button>
+             <button type="submit">更新する</button>
            </div>
     </form>
 </body>
