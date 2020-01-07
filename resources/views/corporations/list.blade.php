@@ -9,7 +9,6 @@
         <tr>
             <td>{{$c->id}}</td>
             <td>{{$c->name}}</td>
-            <td>{{$c->name_kana}}</td>
             <td>{{$c->address}}</td>
             <td>{{$c->phone_number}}</td>
             <td>{{$c->email}}</td>

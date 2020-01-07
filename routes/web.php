@@ -21,8 +21,14 @@ Route::get('/', function () {
 
 Route::get('/corporation', 'CorporationController@index')->name('corporations.list');
 
+
 Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create');
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
+
+
+Route::get('/corporation/show', 'CorporationController@show')->name('corporations.show');
+Route::get('/corporation/show', 'CorporationController@select')->name('corporations.select');
+
 
 Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit');
 

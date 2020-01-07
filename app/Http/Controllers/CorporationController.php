@@ -30,14 +30,21 @@ class CorporationController extends Controller
     }
 
 
+    public function show()
+    {
+        return view('corporation.show');
+    }
+
+
+    public function select(Request $request)
+    {
+        $id->fill($request->all());
+        return redirect('/corporation.edit{$id}');
+    }
+
+
     public function edit($id){
-        $post = Post::find($id);
-        return View::make('posts.edit')
-            ->with('post', $post);
+        $data = Corporation::find($id);
+        return view('corporations.edit')->with('data', $data);
     }
 }
-
-
-
-
-
