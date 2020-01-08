@@ -26,9 +26,8 @@ Route::get('/corporation/create', 'CorporationController@create')->name('corpora
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
 
 
-Route::get('/corporation/show', 'CorporationController@show')->name('corporations.show');
-Route::get('/corporation/show', 'CorporationController@select')->name('corporations.select');
-
+Route::get('/corporation/edit', 'CorporationController@show')->name('corporations.show');
+Route::post('/corporation/edit', 'CorporationController@search')->name('corporations.search');
 
 Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit');
 

@@ -32,14 +32,14 @@ class CorporationController extends Controller
 
     public function show()
     {
-        return view('corporation.show');
+        return view('corporations.show');
     }
 
 
-    public function select(Request $request)
+    public function search(Request $fill)
     {
-        $id->fill($request->all());
-        return redirect('/corporation.edit{$id}');
+        $id = Input::get('id')->save();
+        return redirect('/corporation.edit{id}');
     }
 
 

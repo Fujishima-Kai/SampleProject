@@ -6,7 +6,7 @@
 
   <p>入力項目</p>
   <ul>
-<li>  ID　<input class="form-control" name="id" type="text" id="1" value="{{ $data->id }}"></li><br>
+<li>  ID　<input class="form-control" name="id" type="text" id="1"></li><br>
   </ul>
   <div class="form-submit">
              <button type="submit">検索する</button>
