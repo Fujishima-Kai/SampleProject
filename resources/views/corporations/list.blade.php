@@ -12,6 +12,8 @@
             <td>{{$c->address}}</td>
             <td>{{$c->phone_number}}</td>
             <td>{{$c->email}}</td>
+            <td><a href="/corporation/edit{id}" class="btn btn-primary btn-sm">編集</a></td>
+            <td><a href="/corporation/delete{id}" class="btn btn-primary btn-sm">削除</a></td>
         </tr>
     @endforeach
     </table>

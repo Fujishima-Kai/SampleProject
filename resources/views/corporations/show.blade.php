@@ -1,7 +1,7 @@
 <html>
 <label for="title">取引先情報更新・変更(ID選択)</label><br>
 
- <form action="{{action('CorporationController@store')}}" method='post'>
+ <form action="{{action('CorporationController@search')}}" method='post'>
  @csrf
 
   <p>入力項目</p>

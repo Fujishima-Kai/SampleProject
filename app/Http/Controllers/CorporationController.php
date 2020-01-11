@@ -30,21 +30,26 @@ class CorporationController extends Controller
     }
 
 
-    public function show()
-    {
-        return view('corporations.show');
-    }
-
-
-    public function search(Request $fill)
-    {
-        $id = Input::get('id')->save();
-        return redirect('/corporation.edit{id}');
-    }
-
 
     public function edit($id){
         $data = Corporation::find($id);
         return view('corporations.edit')->with('data', $data);
     }
+
+    public function update(Request $request,$id)
+    {
+
+        $data = Corporation::find($id);
+        // リクエストデータ受取
+        $form = $request->all();
+        // フォームトークン削除
+        unset($form['_token']);
+        // レコードアップデート
+        $data->fill($form)->save();
+        return redirect('/corporation')->with('data', $data);
+    }
+
+
+
+
 }
