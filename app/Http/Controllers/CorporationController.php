@@ -46,7 +46,7 @@ class CorporationController extends Controller
         unset($form['_token']);
         // レコードアップデート
         $data->fill($form)->save();
-        return redirect('/corporation')->with('data', $data);
+        return redirect('/corporation');//->with('data', $data);
     }
 
 
