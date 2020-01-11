@@ -44,12 +44,19 @@ class CorporationController extends Controller
         $form = $request->all();
         // フォームトークン削除
         unset($form['_token']);
+        $data->timestamps = false;
         // レコードアップデート
         $data->fill($form)->save();
-        return redirect('/corporation');//->with('data', $data);
+        return redirect('/corporation');
     }
 
-
-
-
+    public function delete($id){
+        //削除対象レコードを検索
+        $data = Corporation::find($id);
+        //削除
+        $data->delete();
+        //リダイレクト
+        $corporation = Corporation::all();
+        return redirect('/corporation');
+        }
 }

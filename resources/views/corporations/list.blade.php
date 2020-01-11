@@ -13,7 +13,12 @@
             <td>{{$c->phone_number}}</td>
             <td>{{$c->email}}</td>
             <td><a href="/corporation/edit{{$c->id}}" class="btn btn-primary btn-sm">編集</a></td>
-            <td><a href="/corporation/delete{{$c->id}}" class="btn btn-primary btn-sm">削除</a></td>
+            <td>
+            <form method="post" action="/corporation/delete/{{$c->id}}">
+            {{ csrf_field() }}
+            <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("君は本当に削除するつもりかい？");'>
+            </form>
+            </td>
         </tr>
     @endforeach
     </table>
