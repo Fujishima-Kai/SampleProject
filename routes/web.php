@@ -28,7 +28,7 @@ Route::post('/corporation/create', 'CorporationController@store')->name('corpora
 Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit');
 Route::post('/corporation/edit{id}', 'CorporationController@update')->name('corporations.update');
 
-Route::post('/corporation/delete{id}/', 'CorporationController@delete')->name('corporations.delete'); 
+Route::delete('/corporation/delete{id}/', 'CorporationController@delete')->name('corporations.delete'); 
 
 Auth::routes();
 

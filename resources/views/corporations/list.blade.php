@@ -14,9 +14,10 @@
             <td>{{$c->email}}</td>
             <td><a href="/corporation/edit{{$c->id}}" class="btn btn-primary btn-sm">編集</a></td>
             <td>
-            <form method="post" action="/corporation/delete/{{$c->id}}">
+            <form method="post" action="{{ url('corporation/delete'.$c->id)}}">
             {{ csrf_field() }}
-            <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("君は本当に削除するつもりかい？");'>
+            {{ method_field('DELETE') }}
+            <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("本当に削除しますか？");'>
             </form>
             </td>
         </tr>
