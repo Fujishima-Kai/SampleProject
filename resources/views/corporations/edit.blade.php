@@ -7,10 +7,10 @@
  
   <p>入力項目</p>
   <ul>
-<li>  取引先名　<input class="form-control" name="name" type="text" id="2" value="{{ $data->name }}"></li><br>
-<li>  住所　　　<input class="form-control" name="address" type="text" id="3" value="{{ $data->address }}"></li><br>
-<li>  電話番号　<input class="form-control" name="phone_number" type="text" id="4" value="{{ $data->phone_number }}"></li><br>
-<li>  E-Mail　  <input class="form-control" name="email" type="text" id="5" value="{{ $data->email }}"></li><br>
+<li>  取引先名　<input class="form-control" name="name" type="text" value="{{ $data->name }}"></li>
+<li>  住所　　　<input class="form-control" name="address" type="text" value="{{ $data->address }}"></li>
+<li>  電話番号　<input class="form-control" name="phone_number" type="text" value="{{ $data->phone_number }}"></li>
+<li>  E-Mail　  <input class="form-control" name="email" type="text" value="{{ $data->email }}"></li>
   </ul>
   <div class="form-submit">
              <button type="submit">更新する</button>

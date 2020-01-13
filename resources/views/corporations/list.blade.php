@@ -7,7 +7,6 @@
     <table class="table table-striped">
     @foreach($corporations as $c)
         <tr>
-            <td>{{$c->id}}</td>
             <td>{{$c->name}}</td>
             <td>{{$c->address}}</td>
             <td>{{$c->phone_number}}</td>
@@ -16,7 +15,6 @@
             <td>
             <form method="post" action="{{ url('corporation/delete'.$c->id)}}">
             {{ csrf_field() }}
-            {{ method_field('DELETE') }}
             <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("本当に削除しますか？");'>
             </form>
             </td>
