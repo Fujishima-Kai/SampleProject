@@ -1,5 +1,20 @@
 <html>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+		body {
+			padding-top: 50px;
+			background-color: lightgray;
+		}
+
+		.starter-template {
+			padding: 40px 15px;
+			background-color: white;
+		}
+	</style>
     <body>
+    <nav class="navbar navbar-dark bg-dark">
+  <a href="http://127.0.0.1:8000/corporation/create" class="navbar-brand">新規登録</a>
+</nav>
     <h1>取引先一覧表示</h1>
 
     <div class="row">

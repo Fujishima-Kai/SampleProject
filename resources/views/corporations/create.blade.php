@@ -1,7 +1,19 @@
 
 <html>
 <label for="title">新規取引先作成</label><br>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<style>
+		body {
+			padding-top: 50px;
+			background-color: lightgray;
+		}
 
+		.starter-template {
+			padding: 40px 15px;
+			background-color: white;
+		}
+	</style>
+  <body>
  <form action="{{action('CorporationController@store')}}" method='post'>
  @csrf
 
@@ -16,5 +28,6 @@
              <button type="submit">登録する</button>
            </div>
     </form>
+    <a href="http://127.0.0.1:8000/corporation"><button type="submit">一覧に戻る</button></a>
 </body>
 </html>
