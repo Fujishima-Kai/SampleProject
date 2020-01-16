@@ -13,7 +13,7 @@
 	</style>
     <body>
     <nav class="navbar navbar-dark bg-dark">
-  <a href="http://127.0.0.1:8000/corporation/create" class="navbar-brand">新規登録</a>
+  <a href="/corporation/create" class="navbar-brand">新規登録</a>
 </nav>
     <h1>取引先一覧表示</h1>
 

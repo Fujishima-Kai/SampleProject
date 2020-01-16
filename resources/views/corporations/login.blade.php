@@ -20,7 +20,7 @@
 	</style>
  <body>
 
-  <form action="{{ route('corporations.getlogin') }}" method="post">
+  <form action="{{ route('corporations.postlogin') }}" method="post">
   <div class="form-group">
   <label for="email">mail</label>
   <input type="text" id="email" name="email" class="form-control">
