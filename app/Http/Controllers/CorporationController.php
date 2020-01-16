@@ -2,12 +2,32 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth;
+
 use App\Corporation;
 
 use Illuminate\Http\Request;
 
 class CorporationController extends Controller
 {
+
+
+    public function getlogin()
+    {
+    return view('corporations.login');
+    }
+
+
+    public function postlogin(Request $request)
+    {
+        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
+        return redirect()->route('corporations.list');
+        }
+    return redirect()->back();
+    }
+    
+
+
     public function index()
     {
         $corporations = Corporation::all();

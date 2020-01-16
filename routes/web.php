@@ -16,6 +16,13 @@ Route::get('/', function () {
 });
 
 
+Route::get('corporation/users', function() {
+    var_dump(((array) DB::select('SELECT database();')[0])['users()']);
+});
+
+
+Route::get('/corporation/login','CorporationController@getlogin')->name('corporations.getlogin');
+Route::post('/corporation/login','CorporationController@postlogin')->name('corporations.postlogin');
 
 
 Route::get('/corporation', 'CorporationController@index')->name('corporations.list');
