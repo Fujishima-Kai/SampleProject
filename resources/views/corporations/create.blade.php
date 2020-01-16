@@ -28,6 +28,9 @@
              <button type="submit">登録する</button>
            </div>
     </form>
-    <a href="http://127.0.0.1:8000/corporation"><button type="submit">一覧に戻る</button></a>
+    <form action="{{ action('CorporationController@backToList')}}" method='post'>
+  @csrf
+    <button type="submit">一覧に戻る</button>
+    </form>
 </body>
 </html>

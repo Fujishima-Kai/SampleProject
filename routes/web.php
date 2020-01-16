@@ -27,6 +27,8 @@ Route::post('/corporation/login','CorporationController@postlogin')->name('corpo
 
 Route::get('/corporation', 'CorporationController@index')->name('corporations.list');
 
+Route::post('/corporation', 'CorporationController@backToList')->name('corporations.backtolist');
+
 
 Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create');
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');

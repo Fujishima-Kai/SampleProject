@@ -28,5 +28,9 @@
              <button type="submit">更新する</button>
            </div>
     </form>
+    <form action="{{ action('CorporationController@backToList')}}" method='post'>
+  @csrf
+    <button type="submit">一覧に戻る</button>
+    </form>
 </body>
 </html>

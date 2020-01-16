@@ -34,6 +34,13 @@ class CorporationController extends Controller
         return view('corporations.list', ['corporations' => $corporations]);
     }
 
+    public function backToList()
+    {
+        return redirect('/corporation');
+    }
+
+
+
 
     public function create()
     {
