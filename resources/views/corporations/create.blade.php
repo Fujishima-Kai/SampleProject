@@ -20,9 +20,21 @@
   <p>入力項目</p>
   <ul>
 <li>  取引先名　<input class="form-control" name="name" type="text" id="title"></li><br>
+@if ($errors->first('name'))
+      <p class="validation">※{{$errors->first('name')}}</p>
+@endif
 <li>  住所　　　<input class="form-control" name="address" type="text" id="title"></li><br>
+@if ($errors->first('address'))
+      <p class="validation">※{{$errors->first('address')}}</p>
+@endif
 <li>  電話番号　<input class="form-control" name="phone_number" type="text" id="title"></li><br>
-<li>  E-Mail　  <input class="form-control" name="email" type="text" id="title"></li><br>
+@if ($errors->first('phone_number'))
+      <p class="validation">※{{$errors->first('phone_number')}}</p>
+@endif
+<li>  メールアドレス　  <input class="form-control" name="email" type="text" id="title"></li><br>
+@if ($errors->first('email'))
+      <p class="validation">※{{$errors->first('email')}}</p>
+@endif
   </ul>
   <div class="form-submit">
              <button type="submit">登録する</button>

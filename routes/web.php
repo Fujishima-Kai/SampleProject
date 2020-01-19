@@ -39,6 +39,20 @@ Route::post('/corporation/edit{id}', 'CorporationController@update')->name('corp
 
 Route::post('/corporation/delete{id}/', 'CorporationController@delete')->name('corporations.delete'); 
 
+Route::get('/corporation/validation', function(){
+    return view('corporations.validation');
+});
+
+
+
+
+
+
+
+
+
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

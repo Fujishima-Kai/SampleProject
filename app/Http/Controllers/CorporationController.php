@@ -20,6 +20,11 @@ class CorporationController extends Controller
 
     public function postlogin(Request $request)
     {
+        $validater = $request->validate([
+            'email' => 'required|exists:users',
+            'password' => 'required|exists:users',
+        ]);
+
         if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
         return redirect()->route('corporations.list');
         }
@@ -49,6 +54,13 @@ class CorporationController extends Controller
 
     public function store(Request $request)
     {
+        $validater = $request->validate([
+            'name' => 'required|unique:corporations',
+            'address' => 'required|unique:corporations',
+            'phone_number' => 'required|unique:corporations|numeric',
+            'email' => 'required|email|unique:corporations',
+        ]);
+
         $corporations = new Corporation;
         $corporations->fill($request->all());
         $corporations->timestamps = false;
@@ -65,6 +77,12 @@ class CorporationController extends Controller
 
     public function update(Request $request,$id)
     {
+        $validater = $request->validate([
+            'name' => 'required|unique:corporations',
+            'address' => 'required|unique:corporations',
+            'phone_number' => 'required|unique:corporations|numeric',
+            'email' => 'required|email|unique:corporations',
+        ]);
 
         $data = Corporation::find($id);
         // リクエストデータ受取

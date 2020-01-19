@@ -4,7 +4,7 @@
 
   <div class="row">
   <div class="col-md-4 col-md-offset-4">
-  <h1>Sign In</h1>
+  <h1>ログイン</h1>
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <style>
@@ -22,13 +22,22 @@
 
   <form action="{{ route('corporations.postlogin') }}" method="post">
   <div class="form-group">
-  <label for="email">mail</label>
+  <label for="email">メールアドレス</label>
   <input type="text" id="email" name="email" class="form-control">
   </div>
+  @if ($errors->first('email'))
+      <p class="validation">※{{$errors->first('email')}}</p>
+  @endif
+
   <div class="form-group">
-  <label for="password">Password</label>
+  <label for="password">パスワード</label>
   <input type="password" id="password" name="password" class="form-control">
   </div>
+  @if ($errors->first('password'))
+    <p class="validation">※{{$errors->first('password')}}</p>
+  @endif
+
+
   <button type="submit" class="btn btn-primary">ログイン</button>
   {{ csrf_field() }}
   </form>
