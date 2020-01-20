@@ -1,6 +1,7 @@
 
 <html>
-<label for="title">新規取引先作成</label><br>
+<head>
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <style>
 		body {
@@ -13,7 +14,10 @@
 			background-color: white;
 		}
 	</style>
-  <body>
+</head>
+<body>
+
+<label for="title">新規取引先作成</label><br>
  <form action="{{action('CorporationController@store')}}" method='post'>
  @csrf
 

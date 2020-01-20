@@ -32,8 +32,8 @@
       <p class="validation">※{{$errors->first('phone_number')}}</p>
 @endif
 <li class="list-group-item">  E-Mail　  <input class="form-control" name="email" type="text" value="{{ $data->email }}"></li>
-@if ($errors->first('phone_number'))
-      <p class="validation">※{{$errors->first('phone_number')}}</p>
+@if ($errors->first('email'))
+      <p class="validation">※{{$errors->first('email')}}</p>
 @endif
 </ul>
   <div class="form-submit">

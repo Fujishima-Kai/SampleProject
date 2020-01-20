@@ -21,20 +21,19 @@ Route::get('corporation/users', function() {
 });
 
 
-Route::get('/corporation/login','CorporationController@getlogin')->name('corporations.getlogin');
-Route::post('/corporation/login','CorporationController@postlogin')->name('corporations.postlogin');
 
 
-Route::get('/corporation', 'CorporationController@index')->name('corporations.list');
+Route::get('/corporation', 'CorporationController@index')->name('corporations.list')->middleware('auth');
+
 
 Route::post('/corporation', 'CorporationController@backToList')->name('corporations.backtolist');
 
 
-Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create');
+Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create')->middleware('auth');
 Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
 
 
-Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit');
+Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit')->middleware('auth');
 Route::post('/corporation/edit{id}', 'CorporationController@update')->name('corporations.update');
 
 Route::post('/corporation/delete{id}/', 'CorporationController@delete')->name('corporations.delete'); 

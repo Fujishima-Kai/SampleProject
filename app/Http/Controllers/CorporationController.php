@@ -12,26 +12,6 @@ class CorporationController extends Controller
 {
 
 
-    public function getlogin()
-    {
-    return view('corporations.login');
-    }
-
-
-    public function postlogin(Request $request)
-    {
-        $validater = $request->validate([
-            'email' => 'required|exists:users',
-            'password' => 'required|exists:users',
-        ]);
-
-        if(Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
-        return redirect()->route('corporations.list');
-        }
-    return redirect()->back();
-    }
-    
-
 
     public function index()
     {
@@ -55,10 +35,10 @@ class CorporationController extends Controller
     public function store(Request $request)
     {
         $validater = $request->validate([
-            'name' => 'required|unique:corporations',
-            'address' => 'required|unique:corporations',
-            'phone_number' => 'required|unique:corporations|numeric',
-            'email' => 'required|email|unique:corporations',
+            'name' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required|numeric',
+            'email' => 'required|email',
         ]);
 
         $corporations = new Corporation;
@@ -78,10 +58,10 @@ class CorporationController extends Controller
     public function update(Request $request,$id)
     {
         $validater = $request->validate([
-            'name' => 'required|unique:corporations',
-            'address' => 'required|unique:corporations',
-            'phone_number' => 'required|unique:corporations|numeric',
-            'email' => 'required|email|unique:corporations',
+            'name' => 'required',
+            'address' => 'required',
+            'phone_number' => 'required|numeric',
+            'email' => 'required|email',
         ]);
 
         $data = Corporation::find($id);
