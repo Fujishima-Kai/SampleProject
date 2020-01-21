@@ -43,6 +43,11 @@ Route::get('/corporation/validation', function(){
 });
 
 
+Route::get('/item/index', 'ItemController@index');
+
+
+
+
 
 
 

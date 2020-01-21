@@ -26,6 +26,9 @@
             <td>{{$c->address}}</td>
             <td>{{$c->phone_number}}</td>
             <td>{{$c->email}}</td>
+
+            <td><a href="/item/index" class="btn btn-primary btn-sm">出荷</a></td>
+            <td>
             <td><a href="/corporation/edit{{$c->id}}" class="btn btn-primary btn-sm">編集</a></td>
             <td>
             <form method="post" action="{{ url('corporation/delete'.$c->id)}}">
