@@ -25,7 +25,7 @@ class ItemController extends Controller
      */
     public function create()
     {
-        //
+        return view('/item/additem');
     }
 
     /**
@@ -36,7 +36,11 @@ class ItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $item = new Item;
+        $item->fill($request->all());
+        $item->timestamps = false;
+        $item->save();
+        return redirect('/item/index');
     }
 
     /**
