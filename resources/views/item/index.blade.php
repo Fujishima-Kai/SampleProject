@@ -25,13 +25,8 @@
                     @auth
                     <form method="POST" action="{{action('DeliveryItemController@store')}}" class="form-inline m-1">
                         {{CSRF_field()}}
-                        <select name="quantity" class="form-control col-md-2 mr-1">
-                            <option selected>10</option>
-                            <option selected>20</option>
-                            <option selected>30</option>
-                            <option selected>40</option>
-                            <option selected>50</option>
-                            <option selected>0</option>
+                        <label>数量<span class="required"></span></label>
+                        <input type="number" name="quantity" class="form-control col-md-2 mr-1">
                         </select>
                         <input type="hidden" name="item_id" value="{{ $item->id}}">
                         <button type="submit" class="btn btn-primary col-md-6">出荷リストに入れる</button>
