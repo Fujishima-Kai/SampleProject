@@ -1,8 +1,13 @@
 @extends('layouts.app')
 @section('content')
+@if(Session::has('flash_message'))
+        <div class="alert alert-success">
+            {{ session('flash_message') }}
+        </div>
+    @endif
     <nav class="navbar navbar-dark bg-dark">
   <a class="navbar-brand">出荷商品選択</a><br>
-  <a href="/item/add"　class="navbar-brand">商品追加</a>
+  <a href="/item/add"　class="navbar-brand">ad</a>
 </nav>
 <body>
     <div class="container">
@@ -16,11 +21,22 @@
                         <td>サイズ：{{ $item->size }}</td><br>
                         <td>カラー：{{ $item->color }}</td><br>
                         <td>単価：{{ $item->amount }}</td><br>
-                        <form action="{{ action('CorporationController@backToList')}}" method='post'>
-                          @csrf
-                        <button type="submit">選択</button>
-
                     </div>
+                    @auth
+                    <form method="POST" action="{{action('DeliveryItemController@store')}}" class="form-inline m-1">
+                        {{CSRF_field()}}
+                        <select name="quantity" class="form-control col-md-2 mr-1">
+                            <option selected>10</option>
+                            <option selected>20</option>
+                            <option selected>30</option>
+                            <option selected>40</option>
+                            <option selected>50</option>
+                            <option selected>0</option>
+                        </select>
+                        <input type="hidden" name="item_id" value="{{ $item->id}}">
+                        <button type="submit" class="btn btn-primary col-md-6">出荷リストに入れる</button>
+                    </form>
+                    @endauth
                 </div>
             </div>
             @endforeach
@@ -29,9 +45,8 @@
             {{ $items->links() }}
         </div>
     </div>
-    <form action="{{ action('CorporationController@backToList')}}" method='post'>
-  @csrf
-    <button type="submit">一覧に戻る</button>
-    </form>
+    
+    <a href='/corporation'>取引先一覧に戻る</a>
+    
 </body>
 @endsection

@@ -24,26 +24,10 @@
   <p>入力項目</p>
   <ul>
 <li>  品番　<input class="form-control" name="number" type="text" id="title"></li><br>
-@if ($errors->first('name'))
-      <p class="validation">※{{$errors->first('name')}}</p>
-@endif
 <li>  品名　　　<input class="form-control" name="name" type="text" id="title"></li><br>
-@if ($errors->first('address'))
-      <p class="validation">※{{$errors->first('address')}}</p>
-@endif
 <li>  サイズ　<input class="form-control" name="size" type="text" id="title"></li><br>
-@if ($errors->first('phone_number'))
-      <p class="validation">※{{$errors->first('phone_number')}}</p>
-@endif
 <li>  カラー　  <input class="form-control" name="color" type="text" id="title"></li><br>
-@if ($errors->first('email'))
-      <p class="validation">※{{$errors->first('email')}}</p>
-@endif
 <li>  金額  <input class="form-control" name="amount" type="text" id="title"></li><br>
-@if ($errors->first('email'))
-      <p class="validation">※{{$errors->first('email')}}</p>
-@endif
-
   </ul>
   <div class="form-submit">
              <button type="submit">登録する</button>

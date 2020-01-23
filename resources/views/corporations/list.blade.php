@@ -15,7 +15,7 @@
     <nav class="navbar navbar-dark bg-dark">
   <a href="/corporation/create" class="navbar-brand">新規登録</a>
 </nav>
-    <h1>取引先一覧表示</h1>
+    <h2>取引先一覧表示</h2>
 
     <div class="row">
     </div>

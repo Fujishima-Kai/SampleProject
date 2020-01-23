@@ -49,7 +49,7 @@ Route::get('/item/add', 'ItemController@create')->name('item.add')->middleware('
 Route::post('/item/add', 'ItemController@store')->name('corporations.store');
 
 
-
+Route::post('/deliveryitem', 'DeliveryItemController@store');
 
 
 
