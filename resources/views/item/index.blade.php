@@ -16,7 +16,7 @@
 	<meta property="og:image:type" content="image/png">
 	<meta property="og:image:width" content="960">
 	<meta property="og:image:height" content="600">
-	<title>ダッシュボードの実例～Bootstrap4移行ガイド</title>
+	<title>法人管理画面</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9/build/styles/github.min.css">
 	<link rel="stylesheet" href="https://cccabinet.jpn.org/bootstrap4/css/samples.css">

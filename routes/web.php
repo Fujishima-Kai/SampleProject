@@ -25,7 +25,7 @@ Route::get('corporation/users', function() {
 //     return view('corporations.sample');
 // });
 
-Route::get('/corporation/admin', 'CorporationController@admin')->name('corporations.admin');
+Route::get('/corporation/admin', 'CorporationController@admin')->name('corporations.admin')->middleware('auth');
 
 
 
