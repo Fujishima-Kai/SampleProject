@@ -31,7 +31,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">familiar</a>
 			<ul class="navbar-nav px-3">
 				<li class="nav-item text-nowrap">
-					<a class="nav-link" href="/corporation/create">新規登録</a>
+					<a class="nav-link" href="#">サインアウト</a>
 				</li>
 			</ul>
 		</nav>
@@ -77,9 +77,23 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 					</div>
 				</nav>
 
-				
-                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
-				
+				<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+					<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+						<h1 class="h2">部門売上高</h1>
+						<div class="btn-toolbar mb-2 mb-md-0">
+							<div class="btn-group mr-2">
+								<button type="button" class="btn btn-sm btn-outline-secondary">シェア</button>
+								<button type="button" class="btn btn-sm btn-outline-secondary">推移</button>
+							</div>
+							<button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+								今月
+							</button>
+						</div>
+					</div>
+
+					<canvas class="my-4 w-100 chartjs-render-monitor" id="myChart" width="732" height="308" style="display: block; height: 247px; width: 586px;"></canvas>
+
 					<h2>法人リスト</h2>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
@@ -89,6 +103,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 									<th>住所</th>
 									<th>電話番号</th>
 									<th>Email</th>
+									<th>当月売上高</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -98,13 +113,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
                                     <td>{{$c->address}}</td>
                                     <td>{{$c->phone_number}}</td>
                                     <td>{{$c->email}}</td>
-                                    <td><a href="/corporation/edit{{$c->id}}" class="btn btn-primary btn-sm">編集</a></td>
-                                    <td>
-                                    <form method="post" action="{{ url('corporation/delete'.$c->id)}}">
-                                    {{ csrf_field() }}
-                                    <input type="submit" value="削除" class="btn btn-danger btn-sm" onclick='return confirm("本当に削除しますか？");'>
-                                    </form>
-                                    </td>
+                                    <td>uriage</td>
                             </tr>
                                 @endforeach
 							</tbody>
@@ -114,5 +123,39 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 				</main>
 			</div>
 		</div>
+
+	
+
+	<!-- グラフ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+	<script>
+		var ctx = document.getElementById("myChart");
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+			labels: ["Jan", "Feb", "Mar", "Apl", "May", "Jun", "Jul"],
+				datasets: [{
+					data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
+					lineTension: 0,
+					backgroundColor: 'transparent',
+					borderColor: '#007bff',
+					borderWidth: 4,
+					pointBackgroundColor: '#007bff'
+				}]
+			},
+			options: {
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: false
+						}
+					}]
+				},
+				legend: {
+					display: false,
+				}
+			}
+		});
+	</script>
 </body>
 </html>

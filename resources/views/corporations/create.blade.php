@@ -21,7 +21,6 @@
  <form action="{{action('CorporationController@store')}}" method='post'>
  @csrf
 
-  <p>入力項目</p>
   <ul>
 <li>  取引先名　<input class="form-control" name="name" type="text" id="title"></li><br>
 @if ($errors->first('name'))
@@ -41,12 +40,12 @@
 @endif
   </ul>
   <div class="form-submit">
-             <button type="submit">登録する</button>
+             <button type="submit" class="btn btn-primary btn-sm">登録する</button>
            </div>
     </form>
     <form action="{{ action('CorporationController@backToList')}}" method='post'>
   @csrf
-    <button type="submit">一覧に戻る</button>
+    <button type="submit" class="btn btn-primary btn-sm">一覧に戻る</button>
     </form>
 </body>
 </html>

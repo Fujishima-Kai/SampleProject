@@ -18,6 +18,7 @@ class DeliveryItemsTable extends Migration
             $table->integer('corporation_id');
             $table->integer('item_id');
             $table->integer('quantity');
+            $table->float('markup_ratio');
             $table->timestamps();
         });
     }

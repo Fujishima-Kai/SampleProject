@@ -21,12 +21,23 @@ Route::get('corporation/users', function() {
 });
 
 
+// Route::get('/sample', function () {
+//     return view('corporations.sample');
+// });
+
+Route::get('/corporation/admin', 'CorporationController@admin')->name('corporations.admin');
+
+
+
+Route::get('/corporation/selectdelivery', 'CorporationController@selectDelivery')->name('corporations.selectdelivery')->middleware('auth');
 
 
 Route::get('/corporation', 'CorporationController@index')->name('corporations.list')->middleware('auth');
 
 
 Route::post('/corporation', 'CorporationController@backToList')->name('corporations.backtolist');
+
+
 
 
 Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create')->middleware('auth');
@@ -50,7 +61,6 @@ Route::post('/item/add', 'ItemController@store')->name('corporations.store');
 
 
 Route::post('/deliveryitem', 'DeliveryItemController@store');
-
 
 
 

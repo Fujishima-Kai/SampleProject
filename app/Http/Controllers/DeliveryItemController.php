@@ -41,7 +41,7 @@ class DeliveryItemController extends Controller
     {
         DeliveryItem::updateOrCreate(
             [
-                'corporation_id' => Auth::id(),
+                'corporation_id' => $request->post('item_id'),
                 'item_id' => $request->post('item_id'),
             ],
             [

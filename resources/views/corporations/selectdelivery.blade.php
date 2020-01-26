@@ -1,5 +1,4 @@
-<html lang="ja">
-<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
+<html lang="ja"><head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# article: http://ogp.me/ns/article#">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta name="description" content="固定サイドバーとナビゲーションバーを備えた基本的な管理ダッシュボードシェル。">
@@ -22,26 +21,18 @@
 	<link rel="stylesheet" href="https://cccabinet.jpn.org/bootstrap4/css/samples.css">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
 <style>
-body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: text-bottom;}
-/* * サイドバー */.sidebar {position: fixed;top: 0;bottom: 0;left: 0;z-index: 100; 
-/* ナビゲーションバーの背面 */padding: 48px 0 0;
-/* ナビゲーションバーの高さ */box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);}.sidebar-sticky {position: relative;top: 0;height: calc(100vh - 48px);padding-top: .5rem;overflow-x: hidden;overflow-y: auto; 
-/* ビューポートがコンテンツより短い場合、スクロール可能なコンテンツ */}@supports ((position: -webkit-sticky) or (position: sticky)) {.sidebar-sticky {position: -webkit-sticky;position: sticky;}}.sidebar .nav-link {font-weight: 500;color: #333;}.sidebar .nav-link .feather {margin-right: 4px;color: #999;}.sidebar .nav-link.active {color: #007bff;}.sidebar .nav-link:hover .feather,.sidebar .nav-link.active .feather {color: inherit;}.sidebar-heading {font-size: .75rem;text-transform: uppercase;}
-/* * コンテンツ */[role="main"] {padding-top: 133px;
-/* 固定ナビゲーションバーの余白 */}@media (min-width: 768px) {[role="main"] {padding-top: 48px; /* 固定ナビゲーションバーの余白 */}}/* 
-* ナビゲーションバー */.navbar-brand {padding-top: .75rem;padding-bottom: .75rem;font-size: 1rem;background-color: rgba(0, 0, 0, .25);box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);}.navbar .form-control {padding: .75rem 1rem;border-width: 0;border-radius: 0;}.form-control-dark {color: #fff;background-color: rgba(255, 255, 255, .1);border-color: rgba(255, 255, 255, .1);}.form-control-dark:focus {border-color: transparent;box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);}
-.container {margin-right: 50px;　padding-top: 100px;} 
+body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: text-bottom;}/* * サイドバー */.sidebar {position: fixed;top: 0;bottom: 0;left: 0;z-index: 100; /* ナビゲーションバーの背面 */padding: 48px 0 0; /* ナビゲーションバーの高さ */box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);}.sidebar-sticky {position: relative;top: 0;height: calc(100vh - 48px);padding-top: .5rem;overflow-x: hidden;overflow-y: auto; /* ビューポートがコンテンツより短い場合、スクロール可能なコンテンツ */}@supports ((position: -webkit-sticky) or (position: sticky)) {.sidebar-sticky {position: -webkit-sticky;position: sticky;}}.sidebar .nav-link {font-weight: 500;color: #333;}.sidebar .nav-link .feather {margin-right: 4px;color: #999;}.sidebar .nav-link.active {color: #007bff;}.sidebar .nav-link:hover .feather,.sidebar .nav-link.active .feather {color: inherit;}.sidebar-heading {font-size: .75rem;text-transform: uppercase;}/* * コンテンツ */[role="main"] {padding-top: 133px; /* 固定ナビゲーションバーの余白 */}@media (min-width: 768px) {[role="main"] {padding-top: 48px; /* 固定ナビゲーションバーの余白 */}}/* * ナビゲーションバー */.navbar-brand {padding-top: .75rem;padding-bottom: .75rem;font-size: 1rem;background-color: rgba(0, 0, 0, .25);box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);}.navbar .form-control {padding: .75rem 1rem;border-width: 0;border-radius: 0;}.form-control-dark {color: #fff;background-color: rgba(255, 255, 255, .1);border-color: rgba(255, 255, 255, .1);}.form-control-dark:focus {border-color: transparent;box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);}
+
 </style>
 <style type="text/css">/* Chart.js */
-@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style>
-</head>
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style></head>
 
 <body>
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">fam</a>
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">familiar</a>
 			<ul class="navbar-nav px-3">
 				<li class="nav-item text-nowrap">
-                  <a href="/item/add"　class="navbar-brand">ad</a>
+					<a class="nav-link" href="/corporation/create">新規登録</a>
 				</li>
 			</ul>
 		</nav>
@@ -86,44 +77,37 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 
 					</div>
 				</nav>
-@if(Session::has('flash_message'))
-        <div class="alert alert-success">
-            {{ session('flash_message') }}
-        </div>
-        <h1></h1>
-    @endif
-</nav>
-<body>
-    <div class="container" style="padding-top: 50px">
-        <div class="row justify-content-left">
-            @foreach ($items as $item)
-            <div class="col-md-4 mb-2">
-                <div class="card">
-                    <div class="card-header">品番：{{ $item->number }}</div>
-                    <div class="card-body">
-                        <td>品名：{{ $item->name }}</td><br>
-                        <td>サイズ：{{ $item->size }}</td><br>
-                        <td>カラー：{{ $item->color }}</td><br>
-                        <td>単価：{{ $item->amount }}</td><br>
-                    </div>
-                    @auth
-                    <form method="POST" action="{{action('DeliveryItemController@store')}}" class="form-inline m-1">
-                        {{CSRF_field()}}
-                        <label>数量<span class="required"></span></label>
-                        <input type="number" name="quantity" class="form-control col-md-2 mr-1">
-                        </select>
-                        <input type="hidden" name="item_id" value="{{ $item->id}}">
-                        <button type="submit" class="btn btn-primary col-md-6">出荷リストに入れる</button>
-                    </form>
-                    @endauth
-                </div>
-            </div>
-            @endforeach
-        </div>
-        <div class="row justify-content-center">
-            {{ $items->links() }}
-        </div>
-    </div>
-    
-</body>
 
+				
+                    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
+				
+					<h2>法人リスト</h2>
+					<div class="table-responsive">
+						<table class="table table-striped table-sm">
+							<thead>
+								<tr>
+									<th>取引先名</th>
+									<th>住所</th>
+									<th>電話番号</th>
+									<th>Email</th>
+								</tr>
+							</thead>
+							<tbody>
+                                @foreach($corporations as $c)
+                            <tr>
+                                    <td>{{$c->name}}</td>
+                                    <td>{{$c->address}}</td>
+                                    <td>{{$c->phone_number}}</td>
+                                    <td>{{$c->email}}</td>
+                                    <td><a href="/item/index" class="btn btn-primary btn-sm">出荷</a></td>
+                            </tr>
+                                @endforeach
+							</tbody>
+						</table>
+					</div><!-- /.table-responsive -->
+
+				</main>
+			</div>
+		</div>
+</body>
+</html>

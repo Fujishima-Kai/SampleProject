@@ -12,6 +12,13 @@ class CorporationController extends Controller
 {
 
 
+    public function admin()
+    {
+        $corporations = Corporation::all();
+        return view('corporations.admin', ['corporations' => $corporations]);
+    }
+
+
 
     public function index()
     {
@@ -84,4 +91,16 @@ class CorporationController extends Controller
         $corporation = Corporation::all();
         return redirect('/corporation')->with('corporation', $corporation);
         }
+
+
+        public function selectDelivery()
+        {
+            $corporations = Corporation::all();
+            return view('corporations.selectdelivery', ['corporations' => $corporations]);
+        }
+    
+
+
+
+
 }
