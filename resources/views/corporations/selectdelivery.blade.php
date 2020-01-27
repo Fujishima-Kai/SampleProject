@@ -30,11 +30,6 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 <body>
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
 			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">familiar</a>
-			<ul class="navbar-nav px-3">
-				<li class="nav-item text-nowrap">
-					<a class="nav-link" href="/corporation/create">新規登録</a>
-				</li>
-			</ul>
 		</nav>
 
 		<div class="container-fluid">
@@ -100,6 +95,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
                                     <td>{{$c->phone_number}}</td>
                                     <td>{{$c->email}}</td>
                                     <td><a href="/item/index" class="btn btn-primary btn-sm">出荷</a></td>
+									<td><a href="#" class="btn btn-danger btn-sm">返品</a></td>
                             </tr>
                                 @endforeach
 							</tbody>

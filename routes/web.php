@@ -20,11 +20,6 @@ Route::get('corporation/users', function() {
     var_dump(((array) DB::select('SELECT database();')[0])['users()']);
 });
 
-
-// Route::get('/sample', function () {
-//     return view('corporations.sample');
-// });
-
 Route::get('/corporation/admin', 'CorporationController@admin')->name('corporations.admin')->middleware('auth');
 
 
