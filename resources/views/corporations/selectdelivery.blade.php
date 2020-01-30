@@ -99,7 +99,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
                                     <td>{{$c->address}}</td>
                                     <td>{{$c->phone_number}}</td>
                                     <td>{{$c->email}}</td>
-                                    <td><a href="/item/index" class="btn btn-primary btn-sm">出荷</a></td>
+                                    <td><a href="/item/index/{{$c->id}}" class="btn btn-primary btn-sm">出荷</a></td>
                             </tr>
                                 @endforeach
 							</tbody>

@@ -37,9 +37,18 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 </head>
 
 <body>
+@if(Session::has('flash_message'))
+        <div class="alert alert-success">
+            {{ session('flash_message') }}
+        </div>
+    @endif
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
-			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">fam</a>
+			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">familiar</a>
 			<ul class="navbar-nav px-3">
+			<form method="GET" action="ItemController@index">
+                    <input type="text" name="keyword">
+                    <input type="submit" value="商品検索">
+                </form>
 				<li class="nav-item text-nowrap">
                   <a href="/item/add"　class="navbar-brand">ad</a>
 				</li>
@@ -107,10 +116,12 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
                         <td>単価：{{ $item->amount }}</td><br>
                     </div>
                     @auth
-                    <form method="POST" action="{{action('DeliveryItemController@store')}}" class="form-inline m-1">
+                    <form method="POST" action="{{action('ItemController@chooseQuantity', ['id' => $id])}}" class="form-inline m-1">
                         {{CSRF_field()}}
-                        <label>数量<span class="required"></span></label>
+                        <label>数量<span class="required"></span></label><br>
                         <input type="number" name="quantity" class="form-control col-md-2 mr-1">
+                        <label>納入率<span class="required"></span>（％）</label>
+                        <input type="float" name="markup_ratio" class="form-control col-md-2 mr-1">
                         </select>
                         <input type="hidden" name="item_id" value="{{ $item->id}}">
                         <button type="submit" class="btn btn-primary col-md-6">出荷リストに入れる</button>
@@ -119,9 +130,12 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
                 </div>
             </div>
             @endforeach
-        </div>
+			<div>
+			<button type="submit" style=text-align: center;>出荷リストに進む</button>
+			</div>
+		</div>
         <div class="row justify-content-center">
-            {{ $items->links() }}
+		{{ $items->appends(['keyword' => Request::get('keyword')])->links() }}
         </div>
     </div>
     

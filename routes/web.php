@@ -54,13 +54,14 @@ Route::get('/corporation/validation', function(){
 });
 
 
-Route::get('/item/index', 'ItemController@index');
+Route::get('/item/index/{id}', 'ItemController@index');
+Route::post('/item/index/{id}', 'ItemController@index');
 
 Route::get('/item/add', 'ItemController@create')->name('item.add')->middleware('auth');
 Route::post('/item/add', 'ItemController@store')->name('corporations.store');
 
 
-Route::post('/deliveryitem', 'DeliveryItemController@store');
+Route::post('/item/index/{id}', 'ItemController@chooseQuantity');
 
 
 

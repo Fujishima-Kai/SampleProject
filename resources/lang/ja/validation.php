@@ -118,6 +118,9 @@ return [
         'name'=>'取引先名',
         'address'=>'住所',
         'phone_number'=>'電話番号',
+        'quantity'=>'数量',
+        'markup_ratio'=>'納入率',
+        
     ],
 
 ];

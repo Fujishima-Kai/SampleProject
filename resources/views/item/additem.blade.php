@@ -29,7 +29,7 @@
 <li>  カラー　  <input class="form-control" name="color" type="text" id="title"></li><br>
 <li>  金額  <input class="form-control" name="amount" type="text" id="title"></li><br>
   </ul>
-  <div class="form-submit">
+  <div class="form-submit" action="{{ action('CorporationController@backToList')}}" method='post'>
              <button type="submit">登録する</button>
            </div>
     </form>

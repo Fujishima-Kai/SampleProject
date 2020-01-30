@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Item;
+use App\DeliveryItem;
 use Illuminate\Http\Request;
 
 class ItemController extends Controller
@@ -12,10 +13,18 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $id)
     {
         $items = Item::paginate(6);
-        return view('/item/index', ['items' => $items]);
+        return view('item.index', ['items' => $items, 'id' => $id]);
+
+        if($request->has('keyword')) {
+            $items = Item::where('name', 'like', '%'.$request->get('keyword').'%')->paginate(6);
+        }else{
+            $items = Item::paginate(6);
+        }
+        return view('/item/index', ['items' => $items])->with('flash_message', '出荷リストに追加しました');;
+
     }
 
     /**
@@ -40,7 +49,25 @@ class ItemController extends Controller
         $item->fill($request->all());
         $item->timestamps = false;
         $item->save();
-        return redirect('/item/index');
+        return view('item.index');
+    }
+
+
+    public function chooseQuantity(Request $request, $id)
+    {
+        $validater = $request->validate([
+            'quantity' => 'required|numeric',
+            'markup_ratio' => 'required|numeric',
+        ]);
+
+        $delivery = new DeliveryItem;
+        $delivery->corporation_id = $id;
+        $delivery->item_id = $request->item_id;
+        $delivery->quantity = $request->quantity;
+        $delivery->markup_ratio = $request->markup_ratio;
+        $delivery->save();
+        return redirect('/item/index/{id}');
+    
     }
 
     /**
