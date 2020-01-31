@@ -30,6 +30,11 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 <body>
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
 			<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">familiar</a>
+			<ul class="navbar-nav px-3">
+				<li class="nav-item text-nowrap">
+					<a class="nav-link" href="/corporation/create">新規登録</a>
+				</li>
+			</ul>
 		</nav>
 
 		<div class="container-fluid">
@@ -76,30 +81,22 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 				
                     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
 				
-					<h2>法人リスト</h2>
+					<h2>出荷先選択</h2>
 					<div class="table-responsive">
 						<table class="table table-striped table-sm">
 							<thead>
 								<tr>
 									<th>取引先名</th>
-									<th>住所</th>
-									<th>電話番号</th>
-									<th>Email</th>
+									<th></th>
+									<th></th>
 								</tr>
 							</thead>
 							<tbody>
                                 @foreach($corporations as $c)
                             <tr>
                                     <td>{{$c->name}}</td>
-                                    <td>{{$c->address}}</td>
-                                    <td>{{$c->phone_number}}</td>
-                                    <td>{{$c->email}}</td>
-<<<<<<< HEAD
                                     <td><a href="/item/index/{{$c->id}}" class="btn btn-primary btn-sm">出荷</a></td>
-=======
-                                    <td><a href="/item/index" class="btn btn-primary btn-sm">出荷</a></td>
-									<td><a href="#" class="btn btn-danger btn-sm">返品</a></td>
->>>>>>> 6a1c66f865acea5b650c82105633a6d52e0aa8b7
+									<td><a href="/item/index/{{$c->id}}" class="btn btn-danger btn-sm">返品</a></td>
                             </tr>
                                 @endforeach
 							</tbody>

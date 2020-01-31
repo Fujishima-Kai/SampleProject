@@ -131,7 +131,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
             </div>
             @endforeach
 			<div>
-			<button type="submit" style=text-align: center;>出荷リストに進む</button>
+			<button type="submit" style="text-align: center">出荷リストに進む</button>
 			</div>
 		</div>
         <div class="row justify-content-center">
