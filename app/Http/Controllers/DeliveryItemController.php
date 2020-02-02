@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Item;
 use App\DeliveryItem;
 use Illuminate\Http\Request;
 
@@ -14,11 +15,11 @@ class DeliveryItemController extends Controller
      */
     public function index()
     {
-        $deliveryitems = DeliveryItem::select('delivery_items.*', 'items.number', 'items.name', 'items.size','items.color', 'items.amount')
+        $deliveryitems = Item::select('delivery_items.*', 'items.number', 'items.name', 'items.size','items.color', 'items.amount')
             ->where('corporation_id', Auth::id())
             ->join('items', 'items.id','=','delivery_items.item_id')
             ->get();
-        return view('deliveryitem/index', ['deliveryitems' => $cartitems]);
+        return view('deliveryitem/index', ['deliveryitems' => $deliveryitems]);
     }
 
     /**

@@ -15,16 +15,14 @@ class ItemController extends Controller
      */
     public function index(Request $request, $id)
     {
-        $items = Item::paginate(6);
-        return view('item.index', ['items' => $items, 'id' => $id]);
-
+        //dd($id);
         if($request->has('keyword')) {
+            //dd($request->get('keyword'));
             $items = Item::where('name', 'like', '%'.$request->get('keyword').'%')->paginate(6);
         }else{
             $items = Item::paginate(6);
         }
-        return view('/item/index', ['items' => $items])->with('flash_message', '出荷リストに追加しました');;
-
+        return view('item.index', ['items' => $items, 'id' => $id]);
     }
 
     /**
@@ -58,15 +56,15 @@ class ItemController extends Controller
         $validater = $request->validate([
             'quantity' => 'required|numeric',
             'markup_ratio' => 'required|numeric',
+            'item_id' => 'required|numeric',
         ]);
-
         $delivery = new DeliveryItem;
         $delivery->corporation_id = $id;
-        $delivery->item_id = $request->item_id;
-        $delivery->quantity = $request->quantity;
-        $delivery->markup_ratio = $request->markup_ratio;
+        $delivery->item_id = $validater['item_id'];
+        $delivery->quantity = $request['quantity'];
+        $delivery->markup_ratio = $request['markup_ratio'];
         $delivery->save();
-        return redirect('/item/index/{id}');
+        return redirect("/item/index/$id")->with('message', '出荷リストに追加しました');
     
     }
 

@@ -37,9 +37,9 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 </head>
 
 <body>
-@if(Session::has('flash_message'))
+	@if(Session::has('message'))
         <div class="alert alert-success">
-            {{ session('flash_message') }}
+            {{ session('message') }}
         </div>
     @endif
 		<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
@@ -95,14 +95,16 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 
 					</div>
 				</nav>
-@if(Session::has('flash_message'))
+			</div>
+		</div>
+	<!-- @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{ session('flash_message') }}
         </div>
         <h1></h1>
-    @endif
-</nav>
-<body>
+    @endif -->
+
+
     <div class="container" style="padding-top: 50px">
         <div class="row justify-content-left">
             @foreach ($items as $item)
@@ -131,7 +133,7 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
             </div>
             @endforeach
 			<div>
-			<button type="submit" style="text-align: center">出荷リストに進む</button>
+				<button type="submit" style="text-align: center">出荷リストに進む</button>
 			</div>
 		</div>
         <div class="row justify-content-center">
