@@ -19,6 +19,11 @@ class DeliveryItemController extends Controller
             ->where('corporation_id', Auth::id())
             ->join('items', 'items.id','=','delivery_items.item_id')
             ->get();
+        
+        $subtotal = 0;
+        foreach($deliveryitems as $deliveryitem){
+            $subtotal += $deliveryitem->amount * $deliveryitem->quantity;
+        }
         return view('deliveryitem/index', ['deliveryitems' => $deliveryitems]);
     }
 
