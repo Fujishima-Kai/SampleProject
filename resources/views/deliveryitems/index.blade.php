@@ -49,7 +49,6 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 				</li>
 			</ul>
 		</nav>
-
 		<div class="container-fluid">
 			<div class="row">
 				<nav class="col-md-2 d-none d-md-block bg-light sidebar">
@@ -92,54 +91,34 @@ body {font-size: .875rem;}.feather {width: 16px;height: 16px;vertical-align: tex
 				</nav>
 			</div>
 		</div>
-	<!-- @if(Session::has('flash_message'))
-        <div class="alert alert-success">
-            {{ session('flash_message') }}
-        </div>
-        <h1></h1>
-    @endif -->
-
-
     <div class="container" style="padding-top: 50px">
         <div class="row justify-content-left">
-            @foreach ($items as $item)
-            <div class="col-md-4 mb-2">
-                <div class="card">
-                    <div class="card-header">品番：{{ $item->number }}</div>
-                    <div class="card-body">
-                        <td>品名：{{ $item->name }}</td><br>
-                        <td>サイズ：{{ $item->size }}</td><br>
-                        <td>カラー：{{ $item->color }}</td><br>
-                        <td>単価：{{ $item->amount }}</td><br>
-                    </div>
-                    @auth
-                    <form method="POST" action="{{action('ItemController@chooseQuantity', ['id' => $id])}}" class="form-inline m-1">
-                        {{CSRF_field()}}
-                        <label>数量<span class="required"></span></label><br>
-                        <input type="number" name="quantity" class="form-control col-md-2 mr-1">
-                        <label>納入率<span class="required"></span>（％）</label>
-                        <input type="float" name="markup_ratio" class="form-control col-md-2 mr-1">
-                        </select>
-                        <input type="hidden" name="item_id" value="{{ $item->id}}">
-                        <button type="submit" class="btn btn-primary col-md-6">出荷リストに入れる</button>
-                    </form>
-                    @endauth
-                </div>
-            </div>
-            @endforeach
-			<div>
-				<button type="submit" style="text-align: center">出荷リストに進む</button>
-				@if(Session::has('message'))
-					<div class="alert alert-success">
-						{{ session('message') }}
+			@foreach ($deliveryitems as $deliveryitem)
+                	<div class="card-header">
+						<a href="/item/{{ $cartitem->id }}">{{ $deliveryitem->name }}</a>
 					</div>
-    			@endif
-			</div>
-		</div>
-        <div class="row justify-content-center">
-		{{ $items->appends(['keyword' => Request::get('keyword')])->links() }}
+				<div class="card-body">
+					<div>
+						{{ $deliveryitem->amount }}円
+					</div>
+					<div>
+						{{ $deliveryitem->quantity }}個
+					</div>
+                </div>
+            @endforeach
         </div>
     </div>
-    
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    小計
+                </div>
+            <div class="card-body">
+                {{ $subtotal }}円
+            </div>
+		<div>
+			<button type="submit" style="text-align: center">戻る</button>
+		</div>
+    </div>
 </body>
 

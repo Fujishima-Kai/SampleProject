@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/adminlte', function () {
+    return view('home');
+});
+
 
 Route::get('corporation/users', function() {
     var_dump(((array) DB::select('SELECT database();')[0])['users()']);
@@ -57,6 +61,7 @@ Route::post('/item/add', 'ItemController@store')->name('corporations.store');
 
 Route::post('/item/index/{id}', 'ItemController@chooseQuantity');
 
+Route::post('/delveryitems/index', 'DeliveryItemController@index');
 
 
 
