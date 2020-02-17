@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>法人管理</b>MENU',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image-xl',
     'logo_img_xl' => null,
@@ -68,7 +68,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'navbar-lightblue navbar-light',
     'classes_brand_text' => '',
     'classes_content_header' => 'container-fluid',
     'classes_content' => 'container-fluid',
@@ -174,84 +174,62 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
-            'search' => true,
+            'text' => 'こんにちは、Kaiさん',
+            'url' => 'admin/pages',
+            'icon' => 'fas fa-fw fa-user',
             'topnav' => true,
         ],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => '受注管理',
+            'url'         => 'corporation',
             'icon'        => 'far fa-fw fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
-        [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
         ],
         [
-            'text' => 'change_password',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => '取引先管理',
+            'url'  => 'corporation',
+            'icon' => 'fas fa-fw fa-building',
         ],
         [
-            'text'    => 'multilevel',
-            'icon'    => 'fas fa-fw fa-share',
+            'text' => '売上管理',
+            'url'  => '',
+            'icon' => 'fas fa-fw fa-chart-bar',
             'submenu' => [
                 [
-                    'text' => 'level_one',
+                    'text' => '売上管理',
+                    'url'  => 'admin/settings',
+                    'icon' => 'fas fa-fw fa-chart-bar',
+                ]
+            ]
+        ],
+        [
+            'text'    => '出荷業務',
+            'icon'    => 'fas fa-fw fa-truck',
+            'submenu' => [
+                [
+                    'text' => '出荷',
                     'url'  => '#',
+                    'icon_color' => 'blue',
                 ],
                 [
-                    'text'    => 'level_one',
+                    'text'    => '返品',
                     'url'     => '#',
-                    'submenu' => [
-                        [
-                            'text' => 'level_two',
-                            'url'  => '#',
-                        ],
-                        [
-                            'text'    => 'level_two',
-                            'url'     => '#',
-                            'submenu' => [
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                                [
-                                    'text' => 'level_three',
-                                    'url'  => '#',
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-                [
-                    'text' => 'level_one',
-                    'url'  => '#',
+                    'icon_color' => 'red',
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'aqua',
-        ],
+        // ['header' => 'labels'],
+        // [
+        //     'text'       => 'important',
+        //     'icon_color' => 'red',
+        // ],
+        // [
+        //     'text'       => 'warning',
+        //     'icon_color' => 'yellow',
+        // ],
+        // [
+        //     'text'       => 'information',
+        //     'icon_color' => 'aqua',
+        // ],
     ],
 
     /*

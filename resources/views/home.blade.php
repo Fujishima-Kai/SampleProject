@@ -3,11 +3,16 @@
 @section('title', 'Dashboard')
 
 @section('content_header')
-    <h1>Dashboard</h1>
+<section class="content-header">
+    <h1>
+        Corporation
+        <small>Control panel</small>
+    </h1>
+</section>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Please select menu from side-bar</p>
 @stop
 
 @section('css')
