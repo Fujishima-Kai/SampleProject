@@ -20,19 +20,26 @@ class CorporationController extends Controller
 
 
 
-    public function index()
+    public function index(Request $request)
     {
-        $corporations = Corporation::all();
-        return view('corporations.list', ['corporations' => $corporations]);
+        if($request->has('keyword')) {
+            //dd($request->get('keyword'));
+            $corporations = Crporations::where('name', 'like', '%'.$request->get('keyword').'%');
+        }else{
+            $corporations = Corporation::all();
+        }
+        return view('corporations.index', ['corporations' => $corporations]);
     }
 
-    public function backToList()
+    // public function backToList()
+    // {
+    //     return redirect('corporations.index');
+    // }
+
+    public function show()
     {
-        return redirect('/corporation');
+        return view('corporations.show', ['corporation' => $corporation]);
     }
-
-
-
 
     public function create()
     {
@@ -52,7 +59,7 @@ class CorporationController extends Controller
         $corporations->fill($request->all());
         $corporations->timestamps = false;
         $corporations->save();
-        return redirect('/corporation');
+        return redirect('/corporations/index');
     }
 
 
@@ -79,7 +86,7 @@ class CorporationController extends Controller
         $data->timestamps = false;
         // レコードアップデート
         $data->fill($form)->save();
-        return redirect('/corporation');
+        return redirect('/corporations/index');
     }
 
     public function delete($id){

@@ -1,16 +1,16 @@
 <html>
-<label for="title">取引先情報更新・変更(ID選択)</label><br>
-
- <form action="{{action('CorporationController@search')}}" method='post'>
- @csrf
-
-  <p>入力項目</p>
-  <ul>
-<li>  ID　<input class="form-control" name="id" type="text" id="1"></li><br>
-  </ul>
-  <div class="form-submit">
-             <button type="submit">検索する</button>
-           </div>
-    </form>
-</body>
+<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <a href="/corporations/{{ $corporations->id }}">{{ $corporations->name }}</a>
+                    </div>
+                    <div class="card-body">
+                        {{ $item->amount }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </html>

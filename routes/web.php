@@ -31,16 +31,16 @@ Route::get('/corporation/admin', 'CorporationController@admin')->name('corporati
 Route::get('/corporation/selectdelivery', 'CorporationController@selectDelivery')->name('corporations.selectdelivery')->middleware('auth');
 
 
-Route::get('/corporation', 'CorporationController@index')->name('corporations.list')->middleware('auth');
+Route::get('/corporations/index', 'CorporationController@index')->name('corporations.index')->middleware('auth');
 
 
-Route::post('/corporation', 'CorporationController@backToList')->name('corporations.backtolist');
+//Route::post('/corporation/index', 'CorporationController@backToList')->name('corporations.index');
+Route::get('/corporations/{corporation}', 'CorporationController@show');
 
 
 
-
-Route::get('/corporation/create', 'CorporationController@create')->name('corporations.create')->middleware('auth');
-Route::post('/corporation/create', 'CorporationController@store')->name('corporations.store');
+Route::get('/corporations/create', 'CorporationController@create')->name('corporations.create')->middleware('auth');
+Route::post('/corporations/create', 'CorporationController@store')->name('corporations.store');
 
 
 Route::get('/corporation/edit{id}', 'CorporationController@edit')->name('corporations.edit')->middleware('auth');

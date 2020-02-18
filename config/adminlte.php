@@ -181,12 +181,12 @@ return [
         ],
         [
             'text'        => '受注管理',
-            'url'         => 'corporation',
+            'route'         => 'corporations.create',
             'icon'        => 'far fa-fw fa-file',
         ],
         [
             'text' => '取引先管理',
-            'url'  => 'corporation',
+            'route'  => 'corporations.index',
             'icon' => 'fas fa-fw fa-building',
         ],
         [
