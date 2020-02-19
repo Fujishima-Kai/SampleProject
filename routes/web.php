@@ -67,6 +67,21 @@ Route::post('/delveryitems/index', 'DeliveryItemController@index');
 
 
 
+Route::get('/sales/index', function () {
+    return view('sales.index');
+})->name('sales.index')->middleware('auth');
+
+
+Route::get('/sales/create', function () {
+    return view('sales.create');
+})->name('sales.create')->middleware('auth');
+
+
+
+
+
+
+
 
 
 

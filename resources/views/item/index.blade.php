@@ -5,8 +5,7 @@
 @section('content_header')
 <section class="content-header">
     <h1>
-        Corporation
-        <small>Control panel</small>
+        <small>出荷商品選択</small>
     </h1>
 </section>
 @stop

@@ -192,12 +192,17 @@ return [
         [
             'text' => '売上管理',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-chart-bar',
+            'icon' => 'fas fa-fw fa-money-check',
             'submenu' => [
                 [
-                    'text' => '売上管理',
-                    'url'  => 'admin/settings',
+                    'text' => '売上集計',
+                    'route'  => 'sales.index',
                     'icon' => 'fas fa-fw fa-chart-bar',
+                ],
+                [
+                    'text' => '請求書発行',
+                    'route'  => 'sales.create',
+                    'icon' => 'fas fa-fw fa-file-invoice',
                 ]
             ]
         ],
