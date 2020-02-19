@@ -35,7 +35,7 @@ Route::get('/corporations/index', 'CorporationController@index')->name('corporat
 
 
 //Route::post('/corporation/index', 'CorporationController@backToList')->name('corporations.index');
-Route::get('/corporations/{corporation}', 'CorporationController@show');
+Route::get('/corporations/show/{id}', 'CorporationController@show');
 
 
 

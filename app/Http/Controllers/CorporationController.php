@@ -36,9 +36,10 @@ class CorporationController extends Controller
     //     return redirect('corporations.index');
     // }
 
-    public function show()
+    public function show($id)
     {
-        return view('corporations.show', ['corporation' => $corporation]);
+        $data = Corporation::find($id);
+        return view('corporations.show')->with('data', $data);
     }
 
     public function create()

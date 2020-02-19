@@ -17,6 +17,7 @@
               <div class="box-tools">
 			  <nav class="navbar">
               <form method="GET" action="CorporationController@index">
+
                 <div class="input-group input-group hidden-xs" style="width: 150px;">
                   <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
                   	<div class="input-group-btn">
@@ -49,7 +50,7 @@
                                     <td>{{$c->phone_number}}</td>
                                     <td>{{$c->email}}</td> -->
                                     <td>
-                                        <a href="/corporations/show{{$c->id}}" class="btn btn-success btn-sm">詳細</a>
+                                        <a href="/corporations/show/{{$c->id}}" class="btn btn-success btn-sm">詳細</a>
                                     </td>
                                     <td>
                                         <a href="/corporation/edit{{$c->id}}" class="btn btn-primary btn-sm">編集</a>
