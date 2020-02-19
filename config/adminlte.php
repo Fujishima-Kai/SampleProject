@@ -207,7 +207,7 @@ return [
             'submenu' => [
                 [
                     'text' => '出荷',
-                    'url'  => '#',
+                    'route'  => 'item.index',
                     'icon_color' => 'blue',
                 ],
                 [

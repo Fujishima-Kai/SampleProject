@@ -13,7 +13,7 @@ class ItemController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request, $id)
+    public function index(Request $request)
     {
         //dd($id);
         if($request->has('keyword')) {
@@ -22,7 +22,7 @@ class ItemController extends Controller
         }else{
             $items = Item::paginate(6);
         }
-        return view('item.index', ['items' => $items, 'id' => $id]);
+        return view('item.index', ['items' => $items]);
     }
 
     /**
