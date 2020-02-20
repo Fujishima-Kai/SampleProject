@@ -12,7 +12,7 @@
 
 @section('content')
       <body>
-      <form action="{{ url('corporation/edit'$data->id)}}" method='post'>
+      <form action="{{ url('corporation/edit' . $data->id)}}" method='post'>
             @csrf
             <ul class="list-group">
                   <li class="list-group-item"> 
