@@ -181,7 +181,7 @@ return [
         ],
         [
             'text'        => '受注管理',
-            'route'         => 'corporations.create',
+            'url'         => 'orders/index',
             'icon'        => 'far fa-fw fa-file',
         ],
         [

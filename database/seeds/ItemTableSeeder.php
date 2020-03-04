@@ -31,7 +31,7 @@ class ItemTableSeeder extends Seeder
 
             [
                 'number' => '150010',
-                'name' => '肌着',
+                'name' => 'スカート',
                 'size' => '050',
                 'color' => 'QQ',
                 'amount' => '1800',
@@ -46,18 +46,18 @@ class ItemTableSeeder extends Seeder
             ],
 
             [
-                'number' => '150000',
-                'name' => 'タオル',
+                'number' => '880100',
+                'name' => 'ハンカチ',
                 'size' => '050',
                 'color' => 'WH',
                 'amount' => '1500',
             ],
 
             [
-                'number' => '150000',
-                'name' => 'タオル',
-                'size' => '050',
-                'color' => 'WH',
+                'number' => '030001',
+                'name' => 'マスコット',
+                'size' => '000',
+                'color' => 'QQ',
                 'amount' => '1500',
             ],
 
