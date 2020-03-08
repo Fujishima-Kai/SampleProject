@@ -27,6 +27,14 @@ Route::get('corporation/users', function() {
 Route::get('/corporation/admin', 'CorporationController@admin')->name('corporations.admin')->middleware('auth');
 
 
+Route::get('/orders/index', function () {
+    return view('orders.index');
+});
+
+
+
+
+
 
 Route::get('/corporation/selectdelivery', 'CorporationController@selectDelivery')->name('corporations.selectdelivery')->middleware('auth');
 

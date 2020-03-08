@@ -97,7 +97,7 @@ class CorporationController extends Controller
         $data->delete();
         //リダイレクト
         $corporation = Corporation::all();
-        return redirect('/corporation')->with('corporation', $corporation);
+        return redirect('/corporations/index')->with('corporation', $corporation);
         }
 
 

@@ -192,17 +192,17 @@ return [
         [
             'text' => '売上管理',
             'url'  => '',
-            'icon' => 'fas fa-fw fa-money-check',
+            'icon' => 'fas fa-fw fa-coins',
             'submenu' => [
                 [
-                    'text' => '売上集計',
+                    'text' => '計上履歴',
                     'route'  => 'sales.index',
-                    'icon' => 'fas fa-fw fa-chart-bar',
+                    'icon' => 'fas fa-fw fa-file-invoice',
                 ],
                 [
-                    'text' => '請求書発行',
-                    'route'  => 'sales.create',
-                    'icon' => 'fas fa-fw fa-file-invoice',
+                    'text' => 'データ抽出',
+                    'url'  => '#',
+                    'icon' => 'fas fa-fw fa-chart-bar',
                 ]
             ]
         ],
@@ -222,19 +222,21 @@ return [
                 ],
             ],
         ],
-        // ['header' => 'labels'],
-        // [
-        //     'text'       => 'important',
-        //     'icon_color' => 'red',
-        // ],
-        // [
-        //     'text'       => 'warning',
-        //     'icon_color' => 'yellow',
-        // ],
-        // [
-        //     'text'       => 'information',
-        //     'icon_color' => 'aqua',
-        // ],
+        [
+            'text'        => 'アカウント',
+            'url'         => '#',
+            'icon'        => 'far fa-fw fa-user-circle',
+        ],
+        [
+            'text'        => '設定',
+            'url'         => '#',
+            'icon'        => 'far fa-fw fa-cog',
+        ],
+        [
+            'text'        => 'ヘルプ',
+            'url'         => '#',
+            'icon'        => 'far fa-fw fa-question-circle',
+        ],
     ],
 
     /*
